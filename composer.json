@@ -1,0 +1,17 @@
+{
+  "name": "tinylara/tinyview",
+  "description": "Tiny View Loader used by TinyLara.",
+  "license": "MIT",
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "authors": [
+      {
+          "name": "John Lui",
+          "email": "wenhanlv@gmail.com"
+      }
+  ],
+  "autoload": {
+    "psr-4": {"TinyLara\\TinyView\\": ""}
+  }
+}
