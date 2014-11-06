@@ -8,7 +8,7 @@ namespace TinyLara\TinyView;
 class TinyView {
 
   public $view;
-  public $data;
+  public $data = [];
 
   public function __construct($view)
   {
