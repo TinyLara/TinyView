@@ -8,11 +8,13 @@ namespace TinyLara\TinyView;
 class TinyView {
 
   public $view;
-  public $data = [];
+  public $data;
+  public $isJson;
 
-  public function __construct($view)
+  public function __construct($view, $isJson = false)
   {
     $this->view = $view;
+    $this->isJson = $isJson;
   }
 
   public static function make($viewName = null)
@@ -44,11 +46,15 @@ class TinyView {
 
   public static function process($view)
   {
-    if ( $view instanceof TinyView ) {
-      extract($view->data);
-      require $view->view;
+    if ( $view->isJson ) {
+      echo json_encode($view->view);
     } else {
-      throw new UnexpectedValueException("\$view must be instance of TinyView!");
+      if ( $view instanceof TinyView ) {
+        extract($view->data);
+        require $view->view;
+      } else {
+        throw new UnexpectedValueException("\$view must be instance of TinyView!");
+      }
     }
   }
 
