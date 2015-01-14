@@ -20,17 +20,17 @@ class TinyView {
   public static function make($viewName = null)
   {
     if ( !defined('VIEW_BASE_PATH') ) {
-      throw new InvalidArgumentException("VIEW_BASE_PATH is undefined!");
+      throw new \InvalidArgumentException("VIEW_BASE_PATH is undefined!");
     }
     if ( ! $viewName ) {
-      throw new InvalidArgumentException("View name can not be empty!");
+      throw new \InvalidArgumentException("View name can not be empty!");
     } else {
 
       $viewFilePath = self::getFilePath($viewName);
       if ( is_file($viewFilePath) ) {
         return new TinyView($viewFilePath);
       } else {
-        throw new UnexpectedValueException("View file does not exist!");
+        throw new \UnexpectedValueException("View file does not exist!");
       }
     }
   }
@@ -38,13 +38,13 @@ class TinyView {
   public static function json($arr)
   {
     if ( !is_array($arr) ) {
-      throw new UnexpectedValueException("View::json can only recieve Array!");
+      throw new \UnexpectedValueException("View::json can only recieve Array!");
     } else {
       return new TinyView($arr, true);
     }
   }
 
-  public static function process($view)
+  public static function process($view = null)
   {
     if ( $view->isJson ) {
       echo json_encode($view->view);
@@ -53,7 +53,7 @@ class TinyView {
         extract($view->data);
         require $view->view;
       } else {
-        throw new UnexpectedValueException("\$view must be instance of TinyView!");
+        echo $view;
       }
     }
   }
@@ -77,6 +77,6 @@ class TinyView {
       return $this->with(snake_case(substr($method, 4)), $parameters[0]);
     }
 
-    throw new BadMethodCallException("Function [$method] does not exist!");
+    throw new \BadMethodCallException("Function [$method] does not exist!");
   }
 }
