@@ -1,6 +1,6 @@
 TinyLara\TinyView
 =====
-[![Latest Stable Version](https://poser.pugx.org/tinylara/tinyview/v/stable.svg)](https://packagist.org/packages/tinylara/tinyview) [![Total Downloads](https://poser.pugx.org/tinylara/tinyview/downloads.svg)](https://packagist.org/packages/tinylara/tinyview) [![Latest Unstable Version](https://poser.pugx.org/tinylara/tinyview/v/unstable.svg)](https://packagist.org/packages/tinylara/tinyview) [![License](https://poser.pugx.org/tinylara/tinyview/license.svg)](https://packagist.org/packages/tinylara/tinyview)
+[![Latest Stable Version](https://poser.pugx.org/tinylara/tinyview/v/stable.svg)](https://packagist.org/packages/tinylara/tinyview) [![Total Downloads](https://poser.pugx.org/tinylara/tinyview/downloads.svg)](https://packagist.org/packages/tinylara/tinyview) [![Latest Stable Version](https://poser.pugx.org/tinylara/tinyview/v/stable.svg)](https://packagist.org/packages/tinylara/tinyview) [![License](https://poser.pugx.org/tinylara/tinyview/license.svg)](https://packagist.org/packages/tinylara/tinyview)
 
 TinyView is a tiny view-loader used by [Tinylara](http://tinylara.com), fast and sexy!
 
@@ -10,7 +10,7 @@ If you have Composer, just include TinyView as a project dependency in your `com
 
 ```
 require: {
-    "tinylara/tinyview": "dev-master"
+    "tinylara/tinyview": "*"
 }
 ```
 
