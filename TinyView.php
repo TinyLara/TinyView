@@ -46,14 +46,16 @@ class TinyView {
 
   public static function process($view = null)
   {
+    if ( is_string($view) ) {
+      echo $view;
+      return;
+    }
     if ( $view->isJson ) {
       echo json_encode($view->view);
     } else {
       if ( $view instanceof TinyView ) {
         extract($view->data);
         require $view->view;
-      } else {
-        echo $view;
       }
     }
   }
