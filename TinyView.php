@@ -50,7 +50,7 @@ class TinyView {
       echo $view;
       return;
     }
-    if ( $view->isJson ) {
+    if ( isset($view) && $view->isJson ) {
       echo json_encode($view->view);
     } else {
       if ( $view instanceof TinyView ) {
